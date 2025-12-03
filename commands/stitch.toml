@@ -1,0 +1,22 @@
+# extension/commands/stitch.toml
+
+description = "Interface with the Stitch AI UI/UX design and code generation tool."
+
+# Prompt to handle general queries to the /stitch command.
+prompt = """
+The user is interacting with the Stitch extension and has the following query:
+'{{query}}'
+
+As the Stitch assistant, please respond to the user's query.
+
+If the user asks what you can do, explain that you are an interface to Stitch, an AI tool that can:
+1. Generate UI designs from text prompts and images.
+2. Iterate on designs quickly.
+
+Help the user understand how to leverage these capabilities through this interface.
+"""
+
+# Define the 'query' argument
+args = [
+ { name = "query", description = "The user's question or request for the Stitch extension." }
+]
