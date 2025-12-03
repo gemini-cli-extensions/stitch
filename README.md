@@ -24,12 +24,12 @@ Before using this extension, ensure you have the following:
 3.  **GCP Project Configuration:**
     *   Set your project and quota project.
         ```bash
+        export PROJECT_NAME="your-project-id"
         gcloud config set project $PROJECT_NAME
         gcloud auth application-default set-quota-project $PROJECT_NAME
         ```
-    *   **Service Usage Role:** Your account (`%USERNAME%@gmail.com`) must have the `roles/serviceusage.serviceUsageConsumer` role on your GCP project.
+    *   **Service Usage Role:** Your account must have the `roles/serviceusage.serviceUsageConsumer` role.
         ```bash
-        export PROJECT_NAME="your-project-id"
         gcloud projects add-iam-policy-binding $PROJECT_NAME \
           --member="user:%USERNAME%@gmail.com" \
           --role="roles/serviceusage.serviceUsageConsumer"
