@@ -2,24 +2,24 @@
 
 The Stitch extension for Gemini CLI enables you to interact with the Stitch MCP (Model Context Protocol) server using natural language commands. This makes it easier to manage your design projects and assets within [Stitch](https://stitch.withgoogle.com/), the AI-powered UI/UX design and code generation tool.
 
-## Features
+## ✨ Features
 
-*   **List Projects:** View a list of your Stitch projects.
-*   **Project Details:** Get detailed information about a specific project.
-*   **Retrieve Screens:** Access all screens within a given project.
-*   *More features coming soon...*
+- **🎨 List Projects:** View a list of your Stitch projects.
+- **🎨 Project Details:** Get detailed information about a specific project.
+- **🎨 Retrieve Screens:** Access all screens within a given project.
+- **🎨 More features coming soon...*
 
-## Prerequisites
+## 📋 Prerequisites
 
 Before using this extension, ensure you have the following:
 
 1.  **Gemini CLI:**
     *   Install the Gemini CLI (v0.20.0 or newer).
     *   Refer to [go/gemini-cli](https://go/gemini-cli) for installation instructions.
+    *   Setup Gemini CLI Authentication.
 
 2.  **gcloud CLI:**
-    *   Install and initialize the `gcloud` CLI.
-    *   Refer to [go/gcloud-cli](https://go/gcloud-cli) for details.
+    *   Install and initialize the [gcloud CLI](https://go/gcloud-cli).
 
 3.  **GCP Project Configuration:**
     *   Set your project and quota project.
@@ -38,10 +38,6 @@ Before using this extension, ensure you have the following:
         ```bash
         gcloud beta services mcp enable stitch.googleapis.com --project=$PROJECT_NAME
         ```
-    *   **API Key:** Generate an API Key from your GCP project.
-        ```bash
-        gcloud services api-keys create --display-name="Stitch API Key"
-        ```
 
 4.  **Authentication:**
     *   Authenticate with Application Default Credentials (ADC).
@@ -49,7 +45,7 @@ Before using this extension, ensure you have the following:
         gcloud auth application-default login
         ```
 
-## Installation
+## 🚀 Installation
 
 1.  **Install the Extension:**
     Run the following command in your terminal to install the Stitch extension:
@@ -58,11 +54,11 @@ Before using this extension, ensure you have the following:
     ```
     *Note: The `--auto-update` flag is optional but recommended to keep the extension up-to-date.*
 
-2.  **Configure API Key:**
+2.  **Configure `X-Goog-User-Project`:**
     *   Open the configuration file located at `~/.gemini/extensions/Stitch/gemini-extension.json`.
-    *   Replace the placeholder `YOUR_API_KEY` with the actual API Key you obtained in the prerequisites step.
+    *   Replace the placeholder `YOUR_PROJECT_ID` with the actual project ID you obtained in the prerequisites step.
 
-## Usage
+## 💡 Usage
 
 1.  **Start Gemini CLI:**
     Launch the Gemini CLI with the Stitch extension enabled:
@@ -97,12 +93,12 @@ Before using this extension, ensure you have the following:
         /stitch Download the HTML of screen 6393b8177be0490f89eb8f2c1e4cfb37
         ```
 
-## Resources
+## 🔧 Resources
 
 *   [Stitch](https://stitch.withgoogle.com/): The official Stitch web application.
 *   [Gemini CLI Extensions](https://gemini-cli-extensions.github.io/): Documentation on using extensions in Gemini CLI.
 *   [GitHub Issues](https://github.com/gemini-cli-extensions/stitch/issues): Report bugs or request new features.
 
-## Legal
+## 📄 Legal
 
 *   **License:** [Apache License 2.0](https://github.com/gemini-cli-extensions/stitch/blob/main/LICENSE)

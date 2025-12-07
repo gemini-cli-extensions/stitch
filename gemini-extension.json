@@ -12,7 +12,7 @@
                 ]
             },
             "headers": {
-                "X-Goog-Api-Key": "YOUR_API_KEY"
+                "X-Goog-User-Project": "YOUR_PROJECT_ID"
             },
             "timeout": 300000
         }
