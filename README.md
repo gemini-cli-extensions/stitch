@@ -7,6 +7,8 @@ The Stitch extension for Gemini CLI enables you to interact with the Stitch MCP 
 - **🎨 List Projects:** View a list of your Stitch projects.
 - **🎨 Project Details:** Get detailed information about a specific project.
 - **🎨 Retrieve Screens:** Access all screens within a given project.
+- **🎨 Download Assets:** Download assets such as images and HTML files.
+- **🎨 Generate Screen From Text:** Generate new screens from text prompt.
 - **🎨 More features coming soon...*
 
 ## 📋 Prerequisites
@@ -14,7 +16,7 @@ The Stitch extension for Gemini CLI enables you to interact with the Stitch MCP 
 Before using this extension, ensure you have the following:
 
 1.  **Gemini CLI:**
-    *   Install the Gemini CLI (v0.20.0 or newer).
+    *   Install the Gemini CLI (v0.19.0 or newer).
     *   Refer to [go/gemini-cli](https://go/gemini-cli) for installation instructions.
     *   Setup Gemini CLI Authentication.
 
@@ -92,6 +94,14 @@ Before using this extension, ensure you have the following:
         /stitch Download the image of screen 6393b8177be0490f89eb8f2c1e4cfb37
         /stitch Download the HTML of screen 6393b8177be0490f89eb8f2c1e4cfb37
         ```
+    *   **Generate new Screens:**
+        ```
+        /stitch Design a mobile app for people who love skiing in the Alps. 
+        ```         
+
+## 💸 Pricing
+
+*    Stitch MCP is **free of charge**.
 
 ## 🔧 Resources
 
