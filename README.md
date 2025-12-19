@@ -99,6 +99,10 @@ Before using this extension, ensure you have the following:
         /stitch Design a mobile app for people who love skiing in the Alps. 
         ```         
 
+## 📜 Terms of Service
+
+By using this product you agree to the terms and conditions of the following license: [Google APIs Terms of Service](https://pantheon.corp.google.com/tos?id=universal).
+
 ## 💸 Pricing
 
 *    Stitch MCP is **free of charge**.
