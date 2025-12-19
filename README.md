@@ -101,7 +101,7 @@ Before using this extension, ensure you have the following:
 
 ## 📜 Terms of Service
 
-By using this product you agree to the terms and conditions of the following license: [Google APIs Terms of Service](https://pantheon.corp.google.com/tos?id=universal).
+By using this product you agree to the terms and conditions of the following license: [Google APIs Terms of Service](https://console.cloud.google.com/tos?id=universal).
 
 ## 💸 Pricing
 
