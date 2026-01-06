@@ -22,6 +22,10 @@ Before using this extension, ensure you have the following:
 
 2.  **gcloud CLI:**
     *   Install and initialize the [gcloud CLI](https://go/gcloud-cli).
+    *   Login to gcloud CLI.
+        ```bash
+        gcloud auth login
+        ```
 
 3.  **GCP Project Configuration:**
     *   Set your project and quota project.
@@ -33,7 +37,7 @@ Before using this extension, ensure you have the following:
     *   **Service Usage Role:** Your account must have the `roles/serviceusage.serviceUsageConsumer` role.
         ```bash
         gcloud projects add-iam-policy-binding $PROJECT_NAME \
-          --member="user:%USERNAME%@gmail.com" \
+          --member="user:your-gmail-address@gmail.com" \
           --role="roles/serviceusage.serviceUsageConsumer"
         ```
     *   **Enable Stitch MCP:** Enable the Stitch MCP service on your project.
