@@ -20,49 +20,25 @@ Before using this extension, ensure you have the following:
     *   Refer to [go/gemini-cli](https://go/gemini-cli) for installation instructions.
     *   Setup Gemini CLI Authentication.
 
-2.  **gcloud CLI:**
-    *   Install and initialize the [gcloud CLI](https://go/gcloud-cli).
-    *   Login to gcloud CLI.
-        ```bash
-        gcloud auth login
-        ```
-
-3.  **GCP Project Configuration:**
-    *   Set your project and quota project.
-        ```bash
-        export PROJECT_NAME="your-project-id"
-        gcloud config set project $PROJECT_NAME
-        gcloud auth application-default set-quota-project $PROJECT_NAME
-        ```
-    *   **Service Usage Role:** Your account must have the `roles/serviceusage.serviceUsageConsumer` role.
-        ```bash
-        gcloud projects add-iam-policy-binding $PROJECT_NAME \
-          --member="user:your-gmail-address@gmail.com" \
-          --role="roles/serviceusage.serviceUsageConsumer"
-        ```
-    *   **Enable Stitch MCP:** Enable the Stitch MCP service on your project.
-        ```bash
-        gcloud beta services mcp enable stitch.googleapis.com --project=$PROJECT_NAME
-        ```
-
-4.  **Authentication:**
-    *   Authenticate with Application Default Credentials (ADC).
-        ```bash
-        gcloud auth application-default login
-        ```
-
 ## 🚀 Installation
 
 1.  **Install the Extension:**
     Run the following command in your terminal to install the Stitch extension:
     ```bash
-    gemini extensions install https://github.com/gemini-cli-extensions/stitch --auto-update
+    gemini extensions install https://github.com/gemini-cli-extensions/stitch
     ```
-    *Note: The `--auto-update` flag is optional but recommended to keep the extension up-to-date.*
 
-2.  **Configure `X-Goog-User-Project`:**
+2.  **Get API Key:**
+    *   Go to [Stitch](https://stitch.withgoogle.com/).
+    *   Click on your profile icon in the top-right corner.
+    *   Select "Stitch Settings" from the dropdown menu.
+    *   Go to the "API Keys" section.
+    *   Click on "Create Key".
+    *   Copy the generated API key.
+
+2.  **Configure `X-Goog-Api-Key`:**
     *   Open the configuration file located at `~/.gemini/extensions/Stitch/gemini-extension.json`.
-    *   Replace the placeholder `YOUR_PROJECT_ID` with the actual project ID you obtained in the prerequisites step.
+    *   Replace the placeholder `API_KEY` with the actual API key you obtained in the prerequisites step.
 
 ## 💡 Usage
 
