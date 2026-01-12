@@ -17,7 +17,7 @@ Before using this extension, ensure you have the following:
 
 1.  **Gemini CLI:**
     *   Install the Gemini CLI (v0.19.0 or newer).
-    *   Refer to [go/gemini-cli](https://go/gemini-cli) for installation instructions.
+    *   Refer to [Gemini CLI ](https://geminicli.com/) for installation instructions.
     *   Setup Gemini CLI Authentication.
 
 ## 🚀 Installation
