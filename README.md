@@ -45,7 +45,7 @@ Before using this extension, ensure you have the following:
 1.  **Start Gemini CLI:**
     Launch the Gemini CLI with the Stitch extension enabled:
     ```bash
-    gemini -e stitch
+    gemini
     ```
 
 2.  **List Available Tools:**
