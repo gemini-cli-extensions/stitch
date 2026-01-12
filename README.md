@@ -90,7 +90,7 @@ By using this product you agree to the terms and conditions of the following lic
 ## 🔧 Resources
 
 *   [Stitch](https://stitch.withgoogle.com/): The official Stitch web application.
-*   [Gemini CLI Extensions](https://gemini-cli-extensions.github.io/): Documentation on using extensions in Gemini CLI.
+*   [Gemini CLI Extensions](https://google-gemini.github.io/gemini-cli/docs/extensions/): Documentation on using extensions in Gemini CLI.
 *   [GitHub Issues](https://github.com/gemini-cli-extensions/stitch/issues): Report bugs or request new features.
 
 ## 📄 Legal
