@@ -78,6 +78,10 @@ Before using this extension, ensure you have the following:
         ```
         /stitch Design a mobile app for people who love skiing in the Alps. 
         ```         
+    *   **Enhance a Prompt:**
+        ```
+        /stitch Enhance this prompt: "Design a landing page for a podcast about the latest in Design and AI."
+        ```
 
 ## 📜 Terms of Service
 
