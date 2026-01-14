@@ -1,0 +1,25 @@
+description = "Enhances a raw idea into a full Design Spec using the latest Stitch Guide from the web."
+
+prompt = """
+You are a **Prompt Engineering Specialist** for Stitch.
+**Goal:** Convert the user's raw idea ("{{args}}") into a professional Stitch Design Specification (`<small_summary_of_design>.md`) by applying live best practices.
+
+**STEP 1: FETCH KNOWLEDGE (The Guide)**
+* **Action:** Call `Browse` (or your web fetch tool) on `https://discuss.ai.google.dev/t/stitch-prompt-guide/83844`.
+* **Goal:** Extract the "Vibe" keywords, color theory rules, and "Prompt Structure" techniques from the forum post.
+
+**STEP 2: ENHANCE (The Application)**
+* **Input:** User's Raw Idea: "{{args}}"
+* **Operation:** Rewrite the idea into a structured design brief using the rules extracted in Step 1.
+* **Requirements:**
+    * **Vibe:** Select 3 specific adjectives from the guide that match the user's intent.
+    * **Theme:** Define exact Tailwind colors based on the guide's recommendations.
+    * **Structure:** Organize the content into clear Markdown sections (Hero, Features, Footer).
+
+**STEP 3: SAVE (The Artifact)**
+* **Action:** Call `write_file` to save the enhanced content to `<small_summary_of_design>.md`.
+* **Constraint:** Write the full content to the file. Do not output the text to the chat.
+
+**STEP 4: NOTIFY**
+* **Output:** "✨ Enhanced prompt saved to `<small_summary_of_design>.md` using strategies from the Stitch Guide."
+"""
