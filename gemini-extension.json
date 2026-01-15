@@ -5,8 +5,14 @@
     "mcpServers": {
         "stitch": {
             "httpUrl": "https://stitch.googleapis.com/mcp",
+            "authProviderType": "google_credentials",
+            "oauth": {
+                "scopes": [
+                    "https://www.googleapis.com/auth/cloud_platform"
+                ]
+            },
             "headers": {
-                "X-Goog-Api-Key": "API_KEY"
+                "X-Goog-User-Project": "YOUR_PROJECT_ID"
             },
             "timeout": 300000
         }

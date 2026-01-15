@@ -9,36 +9,76 @@ The Stitch extension for Gemini CLI enables you to interact with the Stitch MCP 
 - **🎨 Retrieve Screens:** Access all screens within a given project.
 - **🎨 Download Assets:** Download assets such as images and HTML files.
 - **🎨 Generate Screen From Text:** Generate new screens from text prompt.
-- **🎨 More features coming soon...*
+- **🎨 More features coming soon...**
 
 ## 📋 Prerequisites
 
-Before using this extension, ensure you have the following:
+Before using this extension, ensure you have the following installed:
 
 1.  **Gemini CLI:**
     *   Install the Gemini CLI (v0.19.0 or newer).
-    *   Refer to [Gemini CLI ](https://geminicli.com/) for installation instructions.
-    *   Setup Gemini CLI Authentication.
+    *   Refer to [Gemini CLI Documentation](https://geminicli.com/) for installation instructions.
+
+2.  **gcloud CLI:**
+    *   Install and initialize the [gcloud CLI](https://cloud.google.com/sdk/docs/install).
+    *   Ensure you have a Google Cloud Project to use with Stitch.
 
 ## 🚀 Installation
 
-1.  **Install the Extension:**
-    Run the following command in your terminal to install the Stitch extension:
+Run the following command in your terminal to install the Stitch extension:
+
+```bash
+gemini extensions install https://github.com/gemini-cli-extensions/stitch --auto-update
+```
+
+## 🔐 Configuration & Authentication
+
+To use the Stitch extension, you need to configure authentication.
+
+### 1. Authenticate with Application Default Credentials (ADC)
+
+1.  **Login to gcloud:**
     ```bash
-    gemini extensions install https://github.com/gemini-cli-extensions/stitch
+    gcloud auth login
     ```
 
-2.  **Get API Key:**
-    *   Go to [Stitch](https://stitch.withgoogle.com/).
-    *   Click on your profile icon in the top-right corner.
-    *   Select "Stitch Settings" from the dropdown menu.
-    *   Go to the "API Keys" section.
-    *   Click on "Create Key".
-    *   Copy the generated API key.
+2.  **Configure Project and Quota:**
+    Set your project ID variable and configure the project. Replace `your-project-id` with your actual Google Cloud Project ID.
+    ```bash
+    export PROJECT_ID="your-project-id"
+    gcloud config set project $PROJECT_ID
+    gcloud auth application-default set-quota-project $PROJECT_ID
+    ```
 
-2.  **Configure `X-Goog-Api-Key`:**
-    *   Open the configuration file located at `~/.gemini/extensions/Stitch/gemini-extension.json`.
-    *   Replace the placeholder `API_KEY` with the actual API key you obtained in the prerequisites step.
+3.  **Enable Stitch MCP API:**
+    Enable the Stitch MCP service on your project.
+    ```bash
+    gcloud beta services mcp enable stitch.googleapis.com --project=$PROJECT_ID
+    ```
+
+4.  **Grant Permissions:**
+    Your account needs the `roles/serviceusage.serviceUsageConsumer` role.
+    ```bash
+    gcloud projects add-iam-policy-binding $PROJECT_ID \
+      --member="user:your-email@gmail.com" \
+      --role="roles/serviceusage.serviceUsageConsumer"
+    ```
+
+5.  **Login to ADC:**
+    ```bash
+    gcloud auth application-default login
+    ```
+
+6.  **Configure Extension:**
+    Run the following command to update the configuration file with your project ID:
+
+    ```bash
+    sed -i.bak "s/YOUR_PROJECT_ID/$PROJECT_ID/g" ~/.gemini/extensions/Stitch/gemini-extension.json
+    ```
+
+### 2. Authenticate with Auth API Key
+
+Coming soon...
 
 ## 💡 Usage
 
@@ -76,16 +116,12 @@ Before using this extension, ensure you have the following:
         ```
     *   **Generate new Screens:**
         ```
-        /stitch Design a mobile app for people who love skiing in the Alps. 
-        ```         
+        /stitch Design a mobile app for people who love skiing in the Alps.
+        ```
     *   **Enhance a Prompt:**
         ```
         /stitch Enhance this prompt: "Design a landing page for a podcast about the latest in Design and AI."
         ```
-
-## 📜 Terms of Service
-
-By using this product you agree to the terms and conditions of the following license: [Google APIs Terms of Service](https://console.cloud.google.com/tos?id=universal).
 
 ## 💸 Pricing
 
@@ -99,4 +135,9 @@ By using this product you agree to the terms and conditions of the following lic
 
 ## 📄 Legal
 
-*   **License:** [Apache License 2.0](https://github.com/gemini-cli-extensions/stitch/blob/main/LICENSE)
+Your use of the Stitch API is governed by the Google Terms and Use Policy, and the Google APIs Terms, and your Stitch settings. The Stitch Privacy Notice describes how your data is handled.
+
+*   **[Google Terms and Use Policy](https://policies.google.com/terms)**
+*   **[Google APIs Terms of Service](https://console.cloud.google.com/tos?id=universal)**
+*   **[Stitch Privacy Notice](https://stitch.withgoogle.com/privacy)**
+*   **[Apache License 2.0](https://github.com/gemini-cli-extensions/stitch/blob/main/LICENSE)**
