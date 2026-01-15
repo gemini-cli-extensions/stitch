@@ -8,7 +8,7 @@ The Stitch extension for Gemini CLI enables you to interact with the Stitch MCP 
 - **🎨 Project Details:** Get detailed information about a specific project.
 - **🎨 Retrieve Screens:** Access all screens within a given project.
 - **🎨 Download Assets:** Download assets such as images and HTML files.
-- **🎨 Generate Screen From Text:** Generate new screens from text prompt.
+- **🎨 Generate Screen From Text:** Generate new screens from text prompt, using Gemini 3 Pro or Gemini 3 Flash(default) models.
 - **🎨 More features coming soon...**
 
 ## 📋 Prerequisites
@@ -78,7 +78,7 @@ To use the Stitch extension, you need to configure authentication.
 
 ### 2. Authenticate with Auth API Key
 
-Coming soon...
+    Coming soon...
 
 ## 💡 Usage
 
@@ -92,6 +92,8 @@ Coming soon...
     To see all available MCP tools, including those from Stitch, use:
     ```
     /mcp list
+
+    /mcp desc
     ```
 
 3.  **Interact with Stitch:**
@@ -115,8 +117,10 @@ Coming soon...
         /stitch Download the HTML of screen 6393b8177be0490f89eb8f2c1e4cfb37
         ```
     *   **Generate new Screens:**
+
+        You can generate new screens from text prompt, using Gemini 3 Pro or Gemini 3 Flash (default) models.
         ```
-        /stitch Design a mobile app for people who love skiing in the Alps.
+        /stitch Design a mobile app for people who love skiing in the Alps, using Gemini 3 Pro.
         ```
     *   **Enhance a Prompt:**
         ```
