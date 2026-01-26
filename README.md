@@ -19,7 +19,7 @@ Before using this extension, ensure you have the following installed:
     *   Install the Gemini CLI (v0.19.0 or newer).
     *   Refer to [Gemini CLI Documentation](https://geminicli.com/) for installation instructions.
 
-2.  **gcloud CLI:**
+2.  **gcloud CLI:** (Optional, recommended for ADC authentication)
     *   Install and initialize the [gcloud CLI](https://cloud.google.com/sdk/docs/install).
     *   Ensure you have a Google Cloud Project to use with Stitch.
 
