@@ -33,9 +33,31 @@ gemini extensions install https://github.com/gemini-cli-extensions/stitch --auto
 
 ## 🔐 Configuration & Authentication
 
-To use the Stitch extension, you need to configure authentication.
+To use the Stitch extension, you need to configure authentication. The Stitch MCP server supports two authentication methods:
 
-### 1. Authenticate with Application Default Credentials (ADC)
+- **API Key Authentication**: Simpler to set up. Use an API key generated from Stitch settings, powered by Google Cloud Managed Projects. Ideal for personal use and quick setup.
+- **Application Default Credentials (ADC)**: Uses Google Cloud credentials for authentication. Requires your own Google Cloud project with proper IAM permissions, needs multiple manual steps to set up.
+
+Choose one method below based on your needs.
+
+### 1. Authenticate with Auth API Key
+
+1.  **Get API Key:**
+    *   Go to [Stitch](https://stitch.withgoogle.com/).
+    *   Click on your profile icon in the top-right corner.
+    *   Select "Stitch Settings" from the dropdown menu.
+    *   Go to the "API Keys" section.
+    *   Click on "Create Key".
+    *   Copy the generated API key.
+
+2.  **Configure Extension:**
+    Run the following commands to configure your API key (replace `your-api-key-here` with your actual API key):
+    ```bash
+    export API_KEY="your-api-key-here"
+    sed "s/YOUR_API_KEY/$API_KEY/g" ~/.gemini/extensions/Stitch/gemini-extension-apikey.json > ~/.gemini/extensions/Stitch/gemini-extension.json
+    ```
+
+### 2. Authenticate with Application Default Credentials (ADC)
 
 1.  **Login to gcloud:**
     ```bash
@@ -73,12 +95,8 @@ To use the Stitch extension, you need to configure authentication.
     Run the following command to update the configuration file with your project ID:
 
     ```bash
-    sed -i.bak "s/YOUR_PROJECT_ID/$PROJECT_ID/g" ~/.gemini/extensions/Stitch/gemini-extension.json
+    sed "s/YOUR_PROJECT_ID/$PROJECT_ID/g" ~/.gemini/extensions/Stitch/gemini-extension-adc.json > ~/.gemini/extensions/Stitch/gemini-extension.json
     ```
-
-### 2. Authenticate with Auth API Key
-
-    Coming soon...
 
 ## 💡 Usage
 
